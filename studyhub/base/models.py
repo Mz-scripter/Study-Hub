@@ -17,6 +17,9 @@ class Room(models.Model):
     updated = models.DateTimeField(auto_now=True) # saves the current date and time of when an instance is updated
     created = models.DateTimeField(auto_now_add=True) # saves the timestamp of when the instance os first created
 
+    class Meta:
+        ordering = ['-updated', '-created']
+
     def __str__(self):
         return self.name
 
